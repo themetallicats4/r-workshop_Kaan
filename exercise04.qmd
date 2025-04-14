@@ -1,0 +1,21 @@
+---
+title: Presenting Results
+author: Your Name
+format: html
+---
+
+## Presenting Results
+
+1. Open `exercise04.qmd`
+2. Load the merged dataset
+3. Filter the data for a year of your choice
+4. Create a scatter plot with the `edi` on the x-axis and the `gini_disp` on the y-axis
+5. Load the data on the mean `gini_disp` per `year` by `democracy` status saved from exercise 2 (task 5c)
+6. Create a line chart with `geom_line` using this data
+    a. The year should be on the x axis
+    b. The Gini value should be on the y axis
+    c. The groups should have separate lines using the `colour` property
+
+```{r}
+
+```

@@ -1,0 +1,23 @@
+---
+title: Exercise 1
+author: Your Name
+format: html
+---
+
+## Preparing Data
+
+Prepare your data like this:
+
+1. Load the V-Dem and SWIID data
+2. Merge the data based on `year` and `country_name`/`country`
+3. Create the following new variables:
+	a. `democracy`: Binary indicator whether country is a democracy based on `edi`
+	b. `inequality`: Categorical indicator whether country has **high**, **medium** or **low** inequality based on `gini_disp`
+4. Filter the dataset to only include observations before the year 2020
+5. Save the new version of your data locally as a `.csv` file
+
+You can either do all of these tasks in the following chunk, or create your own structure with own chunks.
+
+```{r}
+
+```

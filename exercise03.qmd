@@ -1,0 +1,25 @@
+---
+title: Inferential Analysis
+author: Your Name
+format: html
+---
+
+## Inferential Analysis
+
+1. Open `exercise03.qmd`
+2. Load the merged dataset in R
+3. Filter the dataset to a year of your choosing
+4. Conduct and interpret the following tests for the dependent variable `gini_disp`:
+    a. A t-test with the IV `democracy`
+    b. An ANOVA with the IV `rotw`
+    c. A Bonferroni test for 4b
+5. Estimate the following OLS models with `gini_disp` as a dependent variable:
+    a. Simple linear model with `edi` as a predictor
+    b. Multiple linear model with `edi`, `gdp_pc` and `oil` as predictors
+    c. A linear model with an interaction of `edi` and `vote_share_cat`
+6. Interpret the effect of `edi` from 5c across the different levels of `vote_share_cat` by calculating the average marginal effects
+7. Save the predicted average marginal effects from 6. as a `.csv` file
+
+```{r}
+
+```

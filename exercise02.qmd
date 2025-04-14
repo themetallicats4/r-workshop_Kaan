@@ -1,0 +1,23 @@
+---
+title: Descriptive Analysis
+author: Your Name
+format: html
+---
+
+## Descriptive Analysis
+
+1. Open `exercise02.qmd`
+2. Load your merged data frame into R
+3. Filter your data frame for a year of your choice
+4. Conduct the following frequency analyses:
+	a. A standard tabulation of the frequencies of your `inequality` variable in your chosen year
+	b. A cross tabulation of your `democracy` variable against V-Dems categorical coding `rotw` in your chosen year
+5. On the unfiltered dataset, conduct the following analyses:
+    a. What is the global mean of V-Dems Electoral Democracy Index `edi`
+    b. What is the population-weighted mean of the Gini coefficient for each observed year?
+    c. For each year, what is the median Gini coefficient of the groups from your `democracy` variable?
+6. Save the object created in **5c** locally on your machine as a `.csv` file
+
+```{r}
+
+```
