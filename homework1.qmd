@@ -1,0 +1,64 @@
+---
+author:
+- name: 'Y. Kaan Payne'
+title: "Name of the Spectacular Homework"
+format:
+    pdf: default
+---
+
+
+```{r}
+
+
+a = 12
+b = 16
+c = c(12,17,14,13,15)
+
+totalSum = 12 + 16
+new_c = c(totalSum,12,17,14,13,15)
+
+res = new_c
+
+logicalTest = a >= b
+backup_logicalTest = 12 %in% new_c
+
+
+```
+
+**The result of the calculation is `{r} res`**
+
+**The result of the logical test is `{r} logicalTest`**
+
+**The result of the backup logical test is `{r} backup_logicalTest`**
+
+```{r install_packages}
+install.packages("knitr", repos = "https://cloud.r-project.org")
+install.packages("kableExtra", repos = "https://cloud.r-project.org")
+```
+
+```{r load_packages}
+library(knitr)
+library(kableExtra)
+```
+
+```{r newCode} 
+
+data.frame(
+    
+    letter = c ("a", "b", "c", "d"),
+    number = c(1,2,3,4),
+    boolean = c(TRUE, FALSE, TRUE, FALSE)
+) |>
+kbl() |>
+kable_classic(
+    c("hover", "striped"),
+    font_size = 12
+)
+
+
+```
+
+**Printed table looks like below**
+
+
+

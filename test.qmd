@@ -1,0 +1,31 @@
+--- 
+author: 
+    name: Y. Kaan Yilmaz
+title: Essentials of Quarto
+format:
+    pdf:
+        font-size: 15pt
+    html: default
+---
+
+**Essentials of Quarto**
+<br>
+*Yasin Kaan Yilmaz*
+<br>
+[GitHub](https://github.io)
+
+![Ignore Image](media/ignore-image.jpg)
+
+```{r}
+1 + 1
+```
+
+
+
+
+
+
+
+
+
+

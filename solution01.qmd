@@ -1,0 +1,77 @@
+---
+title: Solution 1
+author: Timo Sprang
+format: html
+---
+
+## Preparing Data
+
+Prepare your data like this:
+
+1. Load the V-Dem and SWIID data
+2. Merge the data based on `year` and `country_name`/`country`
+3. Create the following new variables:
+	a. `democracy`: Binary indicator whether country is a democracy based on `edi`
+	b. `inequality`: Categorical indicator whether country has **high**, **medium** or **low** inequality based on `gini_disp`
+4. Filter the dataset to only include observations before the year 2020
+5. Save the new version of your data locally as a `.csv` file
+
+We will need the `dplyr` package:
+
+```{r}
+#| label: setup
+
+library(dplyr)
+```
+
+```{r}
+#| label: load-data
+
+vd <- read.csv("data/vdem.csv")
+swiid <- read.csv("data/swiid.csv")
+```
+
+As we are only able to work with cases that have inequality data and the scope of the SWIID is much smaller, I merge them based on SWIID availability.
+
+```{r}
+#| label: merge-data
+
+df <- left_join(
+	swiid, vd, 
+	by=c(
+		"country" = "country_name", "year" = "year"
+	)
+)
+```
+
+I create the democracy variable based on the scale center of V-Dems Electoral democracy index and decide to make cut-offs for the inequality variable based on empirical values.
+
+```{r}
+#| label: create-variables
+
+df <- df |>
+	mutate(
+		democracy = ifelse(edi > 50, TRUE, FALSE),
+		inequality = case_when(
+			gini_disp < 30 ~ "low",
+			gini_disp < 45 ~ "medium",
+			gini_disp >= 45 ~ "high",
+			TRUE ~ NA
+		)
+	)
+```
+
+Filtering the dataset is a really easy task.
+
+```{r}
+#| label: filter
+
+df <- df |>
+	filter(year <= 2020)
+```
+
+Finally, saving the dataset is also straightforward
+
+```{r}
+write.csv(df, "data/newdata.csv")
+```

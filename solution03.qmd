@@ -1,0 +1,122 @@
+---
+title: Inferential Analysis
+author: Timo Sprang
+format: html
+---
+
+## Inferential Analysis
+
+1. Open `exercise03.qmd`
+2. Load the merged dataset in R
+3. Filter the dataset to a year of your choosing---use this version hereafter
+4. Conduct and interpret the following tests for the dependent variable `gini_disp`:
+    a. A t-test with the IV `democracy`
+    b. An ANOVA with the IV `rotw`
+    c. A Bonferroni test for 4b
+5. Estimate the following OLS models with `gini_disp` as a dependent variable:
+    a. Simple linear model with `edi` as a predictor
+    b. Multiple linear model with `edi`, `gdp_pc` and `oil` as predictors
+    c. A linear model with an interaction of `edi` and `vote_share_cat`
+6. Interpret the effect of `edi` from 5c across the different levels of `vote_share_cat` by calculating the average marginal effects
+7. Save the predicted average marginal effects from 6. as a `.csv` file
+
+We will need the following packages:
+
+```{r}
+#| label: setup
+
+library(dplyr)
+library(DescTools)
+library(marginaleffects)
+```
+
+Load the data:
+
+```{r}
+#| label: load-data
+
+df <- read.csv("data/newdata.csv")
+```
+
+Filter the data as before:
+
+```{r}
+#| label: filter-data
+
+dff <- df |>
+    filter(year == 2010)
+```
+
+The t-test can be performed with base R:
+
+```{r}
+#| label: t-test
+
+t.test(dff$gini_disp ~ dff$democracy)
+```
+
+This is also true for the ANOVA:
+
+```{r}
+#| label: anova
+
+anova <- aov(gini_disp ~ rotw, data = dff)
+summary(anova)
+```
+
+Post-Hoc testing is made possible with `DescTools`
+
+```{r}
+#| label: post-hoc
+
+PostHocTest(anova, method = "bonferroni")
+```
+
+Linear modelling is also possible with base R:
+
+```{r}
+#| label: simple-lm
+
+m1 <- lm(gini_disp ~ edi, data = dff)
+summary(m1)
+```
+
+Introducing a new variable is really easy:
+
+```{r}
+#| label: multiple-lm
+
+m2 <- lm(gini_disp ~ edi + gdp_pc + oil, data = dff)
+summary(m2)
+```
+
+Calculating the interaction model also simply requires a re-specification of the formula:
+
+```{r}
+#| label: interaction-lm
+
+m3 <- lm(gini_disp ~ edi*vote_share_cat, data = dff)
+summary(m3)
+```
+
+Calculate the AMEs with the according function of the `marginaleffects` package
+
+```{r}
+#| label: ame
+
+ame <- avg_slopes(
+    m3,
+    variables = "edi",
+    by = "vote_share_cat"
+)
+
+ame
+```
+
+Save the Average Marginal Effects like any other data object:
+
+```{r}
+#| label: save-ame
+
+write.csv(ame, "data/ame.csv", row.names = FALSE)
+```

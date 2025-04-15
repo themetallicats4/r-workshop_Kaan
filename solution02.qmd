@@ -1,0 +1,83 @@
+---
+title: Descriptive Analysis
+author: Timo Sprang
+format: html
+---
+
+## Descriptive Analysis
+
+1. Open `exercise02.qmd`
+2. Load your merged data frame into R
+3. Filter your data frame for a year of your choice
+4. Conduct the following frequency analyses:
+	a. A standard tabulation of the frequencies of your `inequality` variable in your chosen year
+	b. A cross tabulation of your `democracy` variable against V-Dems categorical coding `rotw` in your chosen year
+5. On the unfiltered dataset, conduct the following analyses:
+    a. What is the global mean of V-Dems Electoral Democracy Index `edi`
+    b. What is the population-weighted mean of the Gini coefficient for each observed year?
+        - Hint: You need to filter by `!is.na(population)` before using `weighted.mean()`
+    c. For each year, what is the median Gini coefficient of the groups from your `democracy` variable?
+6. Save the object created in **5c** locally on your machine as a `.csv` file
+
+We will need the `dplyr` package:
+
+```{r}
+#| label: setup
+
+library(dplyr)
+```
+
+To load the merged data from the first exercise, you can simply copy the path and put it into a `read.csv` function.
+
+```{r}
+#| label: load-data
+
+df <- read.csv("data/newdata.csv")
+```
+
+Filter the data as before:
+
+
+```{r}
+#| label: filter-data
+
+dff <- df |>
+    filter(year == 2000)
+```
+
+Performing the frequency analyses is also simply done by using the `table` function:
+
+```{r}
+#| label: freq-analysis
+
+table(dff$inequality)
+table(dff$rotw, dff$democracy)
+```
+
+Analysing the mean values follows combinations of the `mean`, `group_by` and `summarise` functions:
+
+```{r}
+#| label: mean
+
+mean(df$edi, na.rm = TRUE),
+
+yearly_gini <- df |>
+    group_by(year) |>
+    filter(!is.na(population)) |>
+    summarise(
+        gini = weighted.mean(gini_disp, population, na.rm = TRUE)
+    )
+
+yearly_dem_gini <- df |>
+    group_by(democracy, year) |>
+    summarise(gini = mean(gini_disp, na.rm = TRUE))
+```
+
+Save the data as per usual:
+
+
+```{r}
+#| label: save-data
+
+write.csv(yearly_dem_gini, "data/yearly_dem_gini.csv", row.names = FALSE)
+```
