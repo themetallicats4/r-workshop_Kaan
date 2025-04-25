@@ -1,0 +1,22 @@
+---
+title: "For loops"
+output: html_notebook
+---
+
+
+```{r}
+for (i in 1:10){
+    print("Hello")
+}
+```
+
+Another use case of for loops is iterating through a data structure’s elements. The syntax for this also requires a loop variable, the keyword in, and the data structure’s name.
+
+
+```{r}
+my_vector <- c("this", "is", "being", "read", "by", "a", "for", "loop")
+
+for(word in my_vector){
+    print(word)
+}
+```

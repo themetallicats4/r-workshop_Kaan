@@ -1,0 +1,23 @@
+---
+title: "While loop"
+output: html_notebook
+---
+
+
+```{r message=FALSE}
+number_of_heads <- 0
+heads_goal <- 2
+coin <- c("heads", "tails")
+
+while(number_of_heads < heads_goal){
+    #flip the coin (random)
+    result <- sample(coin, 1)
+    print(result)
+    if(result == "heads") {
+        number_of_heads <- number_of_heads + 1
+    }
+}
+```
+
+Apparently, sample() function randomly outputs among given options. 
+
