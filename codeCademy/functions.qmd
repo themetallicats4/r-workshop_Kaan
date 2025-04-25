@@ -1,0 +1,93 @@
+---
+title: "Functions"
+output: html_notebook
+---
+
+**Feet to Meters**
+
+
+```{r}
+
+feet_to_meters <- function(feet) {
+    meters <- feet * 0.3048
+    return(meters)
+}
+
+feet_to_meters(6)
+
+```
+
+
+**Meters to Feet**
+
+
+```{r}
+meters_to_feet <- function(meters){
+    feet <- meters * 3.28084
+    return(feet)
+}
+
+
+meters_to_feet(3)
+
+```
+
+**Decimal to Percentage**
+
+
+```{r}
+turn_to_percent <- function(decimal){
+    decimal * 100
+}
+```
+
+**APPLY()**
+
+apply() takes a data frame or matrix, a margin value, and a function name. The margin value determines whether the function is applied to the rows (1) or columns (2) of the matrix. The following code returns a vector containing the sums of either each column or each row, using apply() and the built-in R function sum().
+
+
+```{r}
+# matrix with 2 rows, 3 columns, all elements are 1
+
+my_matrix <- matrix(1, nrow = 2, ncol = 3)
+
+# apply the sum() function over each row (margin value 1)
+
+print(my_matrix)
+
+apply(my_matrix, 1, sum) # Sum of rows
+
+# apply the sum() function over each column (margin value 2)
+
+apply(my_matrix, 2, sum) # Sum of cols
+
+
+
+```
+
+
+**SAPPLY()**
+
+If we are to turn multiple decimals to percents with our function, without using loops, we can use sapply. 
+
+For example:
+
+
+```{r}
+decimals <- c(0.45, 0.13, 0.25, 0.78, 0.66, 0.92, 0.84, 0.56)
+
+percentages_sapply <- sapply(decimals, turn_to_percent) # sapply(input, functionName)
+
+percentages_sapply # Calling the function. 
+```
+
+**LAPPLY()**
+
+We can do the same thing with lapply() function. "l" here stands for "list"
+
+
+```{r}
+percentages_lapply <- lapply(decimals, turn_to_percent) # lapply(input, functionName)
+
+percentages_lapply # We have the same output as above, as a list. 
+```
