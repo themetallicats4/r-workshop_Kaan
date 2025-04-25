@@ -1,0 +1,80 @@
+---
+title: "Day of the Race"
+output: html_notebook
+---
+
+**Instructions**
+It’s the day of a citywide track race and you’re helping out your friends! You’ll be adding their jersey and color information to a list, helping display their information, and building a useful function to figure out what place your friends came in the race.
+
+```{r}
+friends = c("Megan", "Janet", "Tina")
+```
+
+
+A list that shows jersey numbers and colors of the participants.
+
+```{r}
+info_list <- list(
+    Esther = list(
+        jersey = 3432,
+        color = "purple"
+    ),
+    Feng = list(
+        jersey = 4221,
+        color = "blue"
+    ),
+    Megan = list(
+        jersey = 1363,
+        color = "green"
+    ),
+    Janet = list(
+        jersey = 6729,
+        color = "green"
+    ),
+    Tina = list(
+        jersey = 7501,
+        color = "orange"
+    )
+)
+
+print(info_list) # The list works.
+```
+
+We will create a function that prints out information.
+
+```{r}
+print_information <- function(name){
+    print(paste(name, "is #", info_list[[name]]$jersey, "wearing the color", info_list[[name]]$color ))
+}
+
+print_information("Janet")
+
+# But we want to print out our friends' information. 
+
+results = sapply(friends, print_information)
+print(results)
+```
+
+```{r}
+race_results <- c("Gi", "Francesca", "Lea", "Vivian", "Jessica", "Esther", "Mary", "Yasmina", "Megan", "Janet", "Tiffany", "Kishan", "Feng", "Z", "Tina")
+
+# We want to write a function that finds finishing place.
+
+find_place <- function(runner){
+    for (place in 1:length(race_results)){
+        if(race_results[place] == runner){
+            return(place)
+        }
+    }
+    return(length(race_results) + 1)
+}
+
+find_place("Janet")
+```
+
+
+
+```{r}
+lapply(friends, find_place)
+sapply(friends, find_place)
+```

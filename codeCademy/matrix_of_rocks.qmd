@@ -1,0 +1,15 @@
+---
+title: "Matrix of Rocks"
+output: html_notebook
+---
+
+
+```{r}
+rocks <- matrix(c(12, 8, 7, 10, 5, 13, 6, 11, 10), nrow = 3, ncol = 3)
+
+#Our code will check whether the total weight of all the rocks on the second shelf is greater than the total weight of all the rocks on the first shelf. 
+
+if(sum(rocks[2,]) > sum(rocks[1,])) {
+    print("The total weight on the second shelf is heavier than on the first shelf.")
+}
+```

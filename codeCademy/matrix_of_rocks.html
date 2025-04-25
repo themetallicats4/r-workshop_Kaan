@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Functions</title>
+<title>Matrix of Rocks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,17 +58,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="functions_files/libs/clipboard/clipboard.min.js"></script>
-<script src="functions_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="functions_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="functions_files/libs/quarto-html/popper.min.js"></script>
-<script src="functions_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="functions_files/libs/quarto-html/anchor.min.js"></script>
-<link href="functions_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="functions_files/libs/quarto-html/quarto-syntax-highlighting-226bd0f977fa82dfae4534cac220d79a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="functions_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="functions_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="functions_files/libs/bootstrap/bootstrap-be9206a58a27969b3ea3001da8f26fef.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="matrix_of_rocks_files/libs/clipboard/clipboard.min.js"></script>
+<script src="matrix_of_rocks_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="matrix_of_rocks_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="matrix_of_rocks_files/libs/quarto-html/popper.min.js"></script>
+<script src="matrix_of_rocks_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="matrix_of_rocks_files/libs/quarto-html/anchor.min.js"></script>
+<link href="matrix_of_rocks_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="matrix_of_rocks_files/libs/quarto-html/quarto-syntax-highlighting-226bd0f977fa82dfae4534cac220d79a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="matrix_of_rocks_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="matrix_of_rocks_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="matrix_of_rocks_files/libs/bootstrap/bootstrap-be9206a58a27969b3ea3001da8f26fef.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Functions</h1>
+<h1 class="title">Matrix of Rocks</h1>
 </div>
 
 
@@ -98,126 +98,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Feet to Meters</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>feet_to_meters <span class="ot">&lt;-</span> <span class="cf">function</span>(feet) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    meters <span class="ot">&lt;-</span> feet <span class="sc">*</span> <span class="fl">0.3048</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(meters)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">feet_to_meters</span>(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.8288</code></pre>
-</div>
-</div>
-<p><strong>Meters to Feet</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>meters_to_feet <span class="ot">&lt;-</span> <span class="cf">function</span>(meters){</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    feet <span class="ot">&lt;-</span> meters <span class="sc">*</span> <span class="fl">3.28084</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(feet)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">meters_to_feet</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9.84252</code></pre>
-</div>
-</div>
-<p><strong>Decimal to Percentage</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>turn_to_percent <span class="ot">&lt;-</span> <span class="cf">function</span>(decimal){</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    decimal <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>APPLY()</strong></p>
-<p>apply() takes a data frame or matrix, a margin value, and a function name. The margin value determines whether the function is applied to the rows (1) or columns (2) of the matrix. The following code returns a vector containing the sums of either each column or each row, using apply() and the built-in R function sum().</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># matrix with 2 rows, 3 columns, all elements are 1</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the sum() function over each row (margin value 1)</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3]
-[1,]    1    1    1
-[2,]    1    1    1</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(my_matrix, <span class="dv">1</span>, sum) <span class="co"># Sum of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3 3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the sum() function over each column (margin value 2)</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(my_matrix, <span class="dv">2</span>, sum) <span class="co"># Sum of cols</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 2 2</code></pre>
-</div>
-</div>
-<p><strong>SAPPLY()</strong></p>
-<p>If we are to turn multiple decimals to percents with our function, without using loops, we can use sapply.</p>
-<p>For example:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>decimals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.45</span>, <span class="fl">0.13</span>, <span class="fl">0.25</span>, <span class="fl">0.78</span>, <span class="fl">0.66</span>, <span class="fl">0.92</span>, <span class="fl">0.84</span>, <span class="fl">0.56</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>percentages_sapply <span class="ot">&lt;-</span> <span class="fu">sapply</span>(decimals, turn_to_percent) <span class="co"># sapply(input, functionName)</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>percentages_sapply <span class="co"># Calling the function. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 45 13 25 78 66 92 84 56</code></pre>
-</div>
-</div>
-<p><strong>LAPPLY()</strong></p>
-<p>We can do the same thing with lapply() function. “l” here stands for “list”</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>percentages_lapply <span class="ot">&lt;-</span> <span class="fu">lapply</span>(decimals, turn_to_percent) <span class="co"># lapply(input, functionName)</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>percentages_lapply <span class="co"># We have the same output as above, as a list. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-[1] 45
-
-[[2]]
-[1] 13
-
-[[3]]
-[1] 25
-
-[[4]]
-[1] 78
-
-[[5]]
-[1] 66
-
-[[6]]
-[1] 92
-
-[[7]]
-[1] 84
-
-[[8]]
-[1] 56</code></pre>
-</div>
-</div>
-<p>Some examples with different functions</p>
-<p>There is an R function tolower() that takes in a string value and converts all the characters to lowercase. For example, tolower(“OMG”) would return “omg”. In the workspace, we have a vector names that has names all in uppercase. Use an appropriate apply() function to create a list names_lower where all the names in names are now lowercase. Call names_lower so you can see it outputted.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ALEX"</span>, <span class="st">"IAN"</span>, <span class="st">"NATALIA"</span>, <span class="st">"CAROLYN"</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># let's use tolower function here:</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>lowered_names <span class="ot">&lt;-</span> <span class="fu">sapply</span>(names, tolower)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>lowered_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     ALEX       IAN   NATALIA   CAROLYN 
-   "alex"     "ian" "natalia" "carolyn" </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(lowered_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rocks <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">13</span>, <span class="dv">6</span>, <span class="dv">11</span>, <span class="dv">10</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Our code will check whether the total weight of all the rocks on the second shelf is greater than the total weight of all the rocks on the first shelf. </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">sum</span>(rocks[<span class="dv">2</span>,]) <span class="sc">&gt;</span> <span class="fu">sum</span>(rocks[<span class="dv">1</span>,])) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"The total weight on the second shelf is heavier than on the first shelf."</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </main>

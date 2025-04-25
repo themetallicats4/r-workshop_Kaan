@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Functions</title>
+<title>Day of the Race</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,17 +58,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="functions_files/libs/clipboard/clipboard.min.js"></script>
-<script src="functions_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="functions_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="functions_files/libs/quarto-html/popper.min.js"></script>
-<script src="functions_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="functions_files/libs/quarto-html/anchor.min.js"></script>
-<link href="functions_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="functions_files/libs/quarto-html/quarto-syntax-highlighting-226bd0f977fa82dfae4534cac220d79a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="functions_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="functions_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="functions_files/libs/bootstrap/bootstrap-be9206a58a27969b3ea3001da8f26fef.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="day_of_the_race_files/libs/clipboard/clipboard.min.js"></script>
+<script src="day_of_the_race_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="day_of_the_race_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="day_of_the_race_files/libs/quarto-html/popper.min.js"></script>
+<script src="day_of_the_race_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="day_of_the_race_files/libs/quarto-html/anchor.min.js"></script>
+<link href="day_of_the_race_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="day_of_the_race_files/libs/quarto-html/quarto-syntax-highlighting-226bd0f977fa82dfae4534cac220d79a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="day_of_the_race_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="day_of_the_race_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="day_of_the_race_files/libs/bootstrap/bootstrap-be9206a58a27969b3ea3001da8f26fef.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Functions</h1>
+<h1 class="title">Day of the Race</h1>
 </div>
 
 
@@ -98,125 +98,140 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Feet to Meters</strong></p>
+<p><strong>Instructions</strong> It’s the day of a citywide track race and you’re helping out your friends! You’ll be adding their jersey and color information to a list, helping display their information, and building a useful function to figure out what place your friends came in the race.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>feet_to_meters <span class="ot">&lt;-</span> <span class="cf">function</span>(feet) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    meters <span class="ot">&lt;-</span> feet <span class="sc">*</span> <span class="fl">0.3048</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(meters)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">feet_to_meters</span>(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>friends <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Megan"</span>, <span class="st">"Janet"</span>, <span class="st">"Tina"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A list that shows jersey numbers and colors of the participants.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>info_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">Esther =</span> <span class="fu">list</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">jersey =</span> <span class="dv">3432</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"purple"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Feng =</span> <span class="fu">list</span>(</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">jersey =</span> <span class="dv">4221</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"blue"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Megan =</span> <span class="fu">list</span>(</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">jersey =</span> <span class="dv">1363</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"green"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Janet =</span> <span class="fu">list</span>(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">jersey =</span> <span class="dv">6729</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"green"</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Tina =</span> <span class="fu">list</span>(</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">jersey =</span> <span class="dv">7501</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"orange"</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(info_list) <span class="co"># The list works.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.8288</code></pre>
+<pre><code>$Esther
+$Esther$jersey
+[1] 3432
+
+$Esther$color
+[1] "purple"
+
+
+$Feng
+$Feng$jersey
+[1] 4221
+
+$Feng$color
+[1] "blue"
+
+
+$Megan
+$Megan$jersey
+[1] 1363
+
+$Megan$color
+[1] "green"
+
+
+$Janet
+$Janet$jersey
+[1] 6729
+
+$Janet$color
+[1] "green"
+
+
+$Tina
+$Tina$jersey
+[1] 7501
+
+$Tina$color
+[1] "orange"</code></pre>
 </div>
 </div>
-<p><strong>Meters to Feet</strong></p>
+<p>We will create a function that prints out information.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>meters_to_feet <span class="ot">&lt;-</span> <span class="cf">function</span>(meters){</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    feet <span class="ot">&lt;-</span> meters <span class="sc">*</span> <span class="fl">3.28084</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(feet)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">meters_to_feet</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>print_information <span class="ot">&lt;-</span> <span class="cf">function</span>(name){</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(name, <span class="st">"is #"</span>, info_list[[name]]<span class="sc">$</span>jersey, <span class="st">"wearing the color"</span>, info_list[[name]]<span class="sc">$</span>color ))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print_information</span>(<span class="st">"Janet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 9.84252</code></pre>
+<pre><code>[1] "Janet is # 6729 wearing the color green"</code></pre>
 </div>
-</div>
-<p><strong>Decimal to Percentage</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>turn_to_percent <span class="ot">&lt;-</span> <span class="cf">function</span>(decimal){</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    decimal <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>APPLY()</strong></p>
-<p>apply() takes a data frame or matrix, a margin value, and a function name. The margin value determines whether the function is applied to the rows (1) or columns (2) of the matrix. The following code returns a vector containing the sums of either each column or each row, using apply() and the built-in R function sum().</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># matrix with 2 rows, 3 columns, all elements are 1</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># But we want to print out our friends' information. </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the sum() function over each row (margin value 1)</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>results <span class="ot">=</span> <span class="fu">sapply</span>(friends, print_information)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3]
-[1,]    1    1    1
-[2,]    1    1    1</code></pre>
+<pre><code>[1] "Megan is # 1363 wearing the color green"
+[1] "Janet is # 6729 wearing the color green"
+[1] "Tina is # 7501 wearing the color orange"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(my_matrix, <span class="dv">1</span>, sum) <span class="co"># Sum of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3 3</code></pre>
+<pre><code>                                    Megan 
+"Megan is # 1363 wearing the color green" 
+                                    Janet 
+"Janet is # 6729 wearing the color green" 
+                                     Tina 
+"Tina is # 7501 wearing the color orange" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the sum() function over each column (margin value 2)</span></span>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>race_results <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Gi"</span>, <span class="st">"Francesca"</span>, <span class="st">"Lea"</span>, <span class="st">"Vivian"</span>, <span class="st">"Jessica"</span>, <span class="st">"Esther"</span>, <span class="st">"Mary"</span>, <span class="st">"Yasmina"</span>, <span class="st">"Megan"</span>, <span class="st">"Janet"</span>, <span class="st">"Tiffany"</span>, <span class="st">"Kishan"</span>, <span class="st">"Feng"</span>, <span class="st">"Z"</span>, <span class="st">"Tina"</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(my_matrix, <span class="dv">2</span>, sum) <span class="co"># Sum of cols</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># We want to write a function that finds finishing place.</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>find_place <span class="ot">&lt;-</span> <span class="cf">function</span>(runner){</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (place <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(race_results)){</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(race_results[place] <span class="sc">==</span> runner){</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">return</span>(place)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">length</span>(race_results) <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="fu">find_place</span>(<span class="st">"Janet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 2 2</code></pre>
+<pre><code>[1] 10</code></pre>
 </div>
 </div>
-<p><strong>SAPPLY()</strong></p>
-<p>If we are to turn multiple decimals to percents with our function, without using loops, we can use sapply.</p>
-<p>For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>decimals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.45</span>, <span class="fl">0.13</span>, <span class="fl">0.25</span>, <span class="fl">0.78</span>, <span class="fl">0.66</span>, <span class="fl">0.92</span>, <span class="fl">0.84</span>, <span class="fl">0.56</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>percentages_sapply <span class="ot">&lt;-</span> <span class="fu">sapply</span>(decimals, turn_to_percent) <span class="co"># sapply(input, functionName)</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>percentages_sapply <span class="co"># Calling the function. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 45 13 25 78 66 92 84 56</code></pre>
-</div>
-</div>
-<p><strong>LAPPLY()</strong></p>
-<p>We can do the same thing with lapply() function. “l” here stands for “list”</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>percentages_lapply <span class="ot">&lt;-</span> <span class="fu">lapply</span>(decimals, turn_to_percent) <span class="co"># lapply(input, functionName)</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>percentages_lapply <span class="co"># We have the same output as above, as a list. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(friends, find_place)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] 45
+[1] 9
 
 [[2]]
-[1] 13
+[1] 10
 
 [[3]]
-[1] 25
-
-[[4]]
-[1] 78
-
-[[5]]
-[1] 66
-
-[[6]]
-[1] 92
-
-[[7]]
-[1] 84
-
-[[8]]
-[1] 56</code></pre>
+[1] 15</code></pre>
 </div>
-</div>
-<p>Some examples with different functions</p>
-<p>There is an R function tolower() that takes in a string value and converts all the characters to lowercase. For example, tolower(“OMG”) would return “omg”. In the workspace, we have a vector names that has names all in uppercase. Use an appropriate apply() function to create a list names_lower where all the names in names are now lowercase. Call names_lower so you can see it outputted.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ALEX"</span>, <span class="st">"IAN"</span>, <span class="st">"NATALIA"</span>, <span class="st">"CAROLYN"</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># let's use tolower function here:</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>lowered_names <span class="ot">&lt;-</span> <span class="fu">sapply</span>(names, tolower)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>lowered_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(friends, find_place)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     ALEX       IAN   NATALIA   CAROLYN 
-   "alex"     "ian" "natalia" "carolyn" </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(lowered_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
+<pre><code>Megan Janet  Tina 
+    9    10    15 </code></pre>
 </div>
 </div>
 

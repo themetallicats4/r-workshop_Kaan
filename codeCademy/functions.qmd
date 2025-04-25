@@ -91,3 +91,19 @@ percentages_lapply <- lapply(decimals, turn_to_percent) # lapply(input, function
 
 percentages_lapply # We have the same output as above, as a list. 
 ```
+
+Some examples with different functions
+
+There is an R function tolower() that takes in a string value and converts all the characters to lowercase. For example, tolower("OMG") would return "omg". In the workspace, we have a vector names that has names all in uppercase. Use an appropriate apply() function to create a list names_lower where all the names in names are now lowercase. Call names_lower so you can see it outputted.
+
+
+```{r}
+names <- c("ALEX", "IAN", "NATALIA", "CAROLYN")
+
+# let's use tolower function here:
+
+lowered_names <- sapply(names, tolower)
+
+lowered_names
+
+```
