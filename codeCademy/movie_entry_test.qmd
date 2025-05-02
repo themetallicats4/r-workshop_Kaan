@@ -1,0 +1,19 @@
+---
+title: "R Conditionals"
+output: html_notebook
+---
+
+
+```{r}
+age <- 15
+has_ticket <- TRUE
+message <- "Can I get into the movie?"
+
+if( age >= 13 && has_ticket == TRUE){
+    message = "Welcome to the movie"
+} else{
+    message = "Sorry, we can't let you in."
+}
+
+print(message)
+```
