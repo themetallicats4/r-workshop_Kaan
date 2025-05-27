@@ -1,0 +1,62 @@
+---
+title: "Welfare States Comparison"
+output: html_notebook
+---
+
+
+```{r}
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+```
+
+
+```{r}
+# Install necessary libraries
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+
+```{r}
+unemp_data <- read.csv("/Users/kaanmac/Documents/GitHub/r-workshop_Kaan/data/cwed-subset-4.csv")
+
+unemp_data <- unemp_data %>%
+  mutate(
+    UEQUAL = ifelse(UEQUAL == 999, NA, UEQUAL),
+    UEDUR = ifelse(UEDUR == 999, NA, UEDUR),
+    UEWAIT = ifelse(UEWAIT == 999, NA, UEWAIT)
+  )
+```
+
+```{r}
+ggplot(unemp_data, aes(x = YEAR, y = UEQUAL, color = COUNTRY)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Weeks of Insurance Needed to Qualify (UEQUAL)",
+    y = "Weeks",
+    x = "Year"
+  )
+```
+
+```{r}
+ggplot(unemp_data, aes(x = YEAR, y = UEDUR, color = COUNTRY)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Benefit Entitlement Duration (UEDUR)",
+    y = "Weeks",
+    x = "Year"
+  )
+```
+
+```{r}
+ggplot(unemp_data, aes(x = YEAR, y = UEWAIT, color = COUNTRY)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Waiting Days to Receive Benefit (UEWAIT)",
+    y = "Days",
+    x = "Year"
+  )
+```
+
